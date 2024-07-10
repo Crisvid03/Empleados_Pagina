@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block title %} Departamentos {% endblock title %}
+
+
+{% block content %}
+
+{% include 'includes/header.html' %}
+
+<div class="grid-container " >
+    <h1 class="cell large-7">Departamentos de la empresa</h1>
+    <div class="cell large-12">
+        <table>
+            <tbody>   
+                {% for d in departamentos %}   
+                <tr>
+                    <td>{{ d.name }}</td>
+                    <td>{{ d.short_name }}</td>
+                    <td>
+                        <a class="button small" href="{% url 'empleados_urls:empleados_dep' d.short_name %}">Ver Empleados</a>
+                    </td>
+                    <td>
+                        <a class="button warning" href="{% url 'depart_urls:custom' d.id %}">Modificar</a>
+                    </td>
+                </tr>   
+                {% endfor %}    
+            </tbody>
+        </table>
+        <a href="{% url 'depart_urls:agregar' %}" class="submit success button cell large-12" aria-labelledby="label-nuevo-departamento">Nuevo Departamento</a>
+
+    </div>
+</div>
+
+
+
+{% endblock content %}
+    
+    

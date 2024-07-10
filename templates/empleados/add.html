@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Añadir
+{% endblock title %}
+
+
+{% block content %}
+
+{% include 'includes/header.html' %}
+
+<div class="grid-container">
+    <form method="POST" class="cell" enctype="multipart/form-data"> {% csrf_token %}
+        {{ form }} 
+        <button class="submit success button" type="submit">Guardar</button>
+    </form>
+    
+</div>
+
+
+{% endblock content %}
+    
+    
+
+
+
+
+

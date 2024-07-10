@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Modificar Dep {{ object.short_name }}
+{% endblock title %}
+
+
+{% block content %}
+{% include 'includes/header.html' %}
+
+    <div class="grid-container">
+        <div class="grid-x grid-margin-x ">
+            <h1 class="cell">Actualizacion de departameto</h1>
+            <form method="POST" class="cell grid-x grid-margin-x"> {% csrf_token %}
+                <div class="cell medium-6">
+                    <label>Nombre:
+                        {{ form.name }}
+                    </label>
+                </div>
+                <div class="cell large-6">
+                    <label>Nombre corto:
+                        {{ form.short_name }}
+                    </label>
+                </div>
+                <div class="cell">
+                    <label>Funcionando :
+                        {{ form.funcionando }}
+                    </label>
+                </div>
+                <div class="cell">
+                    <button type="submit"><a class="warning button">Actualizar</a></button>
+                    <button type="submit"><a class="alert button">eliminar</a></button>
+                </div>  
+            </form>
+        </div>
+    </div>
+
+
+{% endblock content %}
+    
+    

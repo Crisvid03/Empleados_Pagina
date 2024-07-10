@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Empleados
+{% endblock title %}
+
+
+{% block content %}
+
+{% include 'includes/header.html' %}
+
+<div class="grid-container">
+    <h1 class="cell large-6">Listado Empleados del departamento </h1>
+    <form class="cell grid-x grid-margin-x" method="GET"> {% csrf_token %}
+        <div class="cell large-7">
+            <input type="text" name="kword" id="kword" placeholder="Buscar Empleado">
+        </div>
+        <div class="cell large-3">
+            <button type="submit" class="success button">Buscar</button>
+        </div>
+    </form>
+    <div class="cell">
+        <table>
+            <thead>
+              <tr>
+                <th width="200">ID</th>
+                <th>Nombre</th>
+                <th width="150">Apellido</th>
+                <th width="150">Departamento</th>
+                <th width="150">Accion</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for e in object_list %}
+                <tr>
+                    <td>{{ e.id }}</td>
+                    <td>{{ e.name }}</td>
+                    <td>{{ e.last_name }}</td>
+                    <td>{{ e.departamento.short_name }}</td>
+                    <td><a class="button small" href="{% url 'empleados_urls:detalle' e.id %}">Ver</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock content %}
+    

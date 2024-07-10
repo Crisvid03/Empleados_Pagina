@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block title %}
+    Modificar {{ object.name }} {{ object.last_name }}
+{% endblock title %}
+    
+
+{% block content %}
+
+{% include 'includes/header.html' %}
+
+<div class="grid-container">
+    <h1 class="cell large-6">Modificar DATOS</h1>
+    <div class="cell large-8">
+        <form method="POST" enctype="multipart/form-data"> {% csrf_token %}
+            {{form.as_p }}
+            <button type="submit"><a class="warning button">Actualizar</a></button>
+        </form>
+            
+    </div>
+
+</div>
+
+{% endblock content %}
+
+

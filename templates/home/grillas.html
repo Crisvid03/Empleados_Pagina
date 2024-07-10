@@ -1,0 +1,22 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/foundation.min.css' %} ">
+</head>
+<body>
+    <h1>La propias grillas llamadas creo de otra forma </h1>
+    <div class="grid-x" style="background: grey;">
+        <h2 class="cell large-6">Elemento 1</h2>
+        <h2 class="cell large-3">Elemento 2</h2>
+        <h2 class="cell large-3">Elemento 3</h2>
+        <div class = "grid-x" style = "background : yellow;">
+            <h3 class="cell large-4">Otro Elemento1</h3>
+            <h3 class="cell large-4">Otro Elemento2</h3>
+            <h3 class="cell large-4">Otro Elemento3</h3>  
+        </div>
+    </div>
+</body>
+</html>

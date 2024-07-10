@@ -1,0 +1,15 @@
+<div class="top-bar">
+    <div class="top-bar-left">
+      <ul class="dropdown menu" data-dropdown-menu>
+        <a href="{% url 'empleados_urls:inicio' %}">Empresa</a>
+        <li><a href=" {% url 'empleados_urls:lista' %}">Empleados</a></li>
+        <li><a href="{% url 'depart_urls:listado' %}">Departamentos</a></li>
+        <li><a href="{% url 'empleados_urls:view_admin' %}">Administrar</a></li>
+      </ul>
+    </div>
+    <div class="top-bar-right">
+      <ul class="menu">
+        <li><a href="{% url 'empleados_urls:añadir' %}" class="button">Guardar Empleado</a></li>
+      </ul>
+    </div>
+  </div>

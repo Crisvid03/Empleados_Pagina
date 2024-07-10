@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block title %}
+    Eliminando
+{% endblock title %}
+
+
+{% block content %}
+
+{% include 'includes/header.html' %}
+
+<div class="grid-container">
+    <div class="grid-x">
+        <!-- Revisar poor que no funciona la traida de full_name -->
+        <h1 class="cell">Empelado a eliminar: <span> {{ object.name }} {{ object.last_name}}</span></h1>
+
+        <div class="grid-container">
+            <div class="grid-x grid-margin-x align-center">
+                <div class="card cell large-7" style="width: 250px; margin-top: 30px;">
+                    <div class="card-divider">
+                      {{ empleado.get_job_display }}
+                    </div> 
+                    {% if empleado.avatar %}
+                        <img src="{{ empleado.avatar.url }}">
+                    {% else %}
+                        <img src="{% static 'img/escri.jpg' %}" >
+                    {% endif %}
+                    <div class="card-section">
+                      <h4>{{ object.name }} {{ object.last_name }}</h4>
+                      <p>Departamento : {{ empleado.departamento.short_name }}</p>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form method="post" class="cell"> {% csrf_token %}
+            <div class="callout alert">
+                <h5>Desea eliminar este empleado?</h5>
+                <button type="submit" class="alert button">Confirmar</button>
+              </div>
+        </form>
+    </div>
+</div>
+    
+{% endblock content %}
+    
+    
+
+
