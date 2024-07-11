@@ -15,9 +15,13 @@ DATABASES = {
         'USER': 'cris',
         'PASSWORD': 'cristian2003',
         'HOST': 'localhost',
-        'PORT': '5432', 
+        'PORT': '5432',
+        'OPTIONS': {
+            'options': '-c client_encoding=UTF8'
+        }
     }
 }
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
