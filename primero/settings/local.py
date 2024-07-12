@@ -11,14 +11,11 @@ ALLOWED_HOSTS = []
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dbempleado',
+        'NAME': 'biblioteca',
         'USER': 'cris',
-        'PASSWORD': 'cristian2003',
+        'PASSWORD': 'cris2003',
         'HOST': 'localhost',
         'PORT': '5432',
-        'OPTIONS': {
-            'options': '-c client_encoding=UTF8'
-        }
     }
 }
 
